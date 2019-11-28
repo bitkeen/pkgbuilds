@@ -1,4 +1,7 @@
 # Contributor: Sean Pringle <sean.pringle@gmail.com>
+#
+# Taken from https://github.com/seanpringle/simpleswitcher and added
+# libxres as a dependency.
 
 pkgname=simpleswitcher
 pkgver=20120625
