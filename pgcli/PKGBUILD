@@ -1,0 +1,36 @@
+# Maintainer: fzerorubigd <fzero@rubi.gd>
+# Contributor: Sven-Hendrik Haase <sh@lutzhaase.com>
+#
+# A mix of https://aur.archlinux.org/packages/pgcli-git/
+# and https://aur.archlinux.org/packages/pgcli/.
+
+pkgname=pgcli
+pkgver=v2.2.0.r27.g779fe9b4
+pkgrel=1
+pkgdesc="a command line interface for Postgres with auto-completion and syntax highlighting"
+url="http://pgcli.com/"
+arch=(any)
+license=('BSD')
+depends=('python' 'python-sqlparse>=0.3.0' 'python-psycopg2' 'python-click' 'python-prompt_toolkit' 'python-humanize>=0.5.1' 'python-configobj>=5.0.6' 'python-pgspecial>=1.11.5' 'python-setproctitle>=1.1.9' 'python-cli_helpers>=1.2.0' 'python-keyring' 'python-dbus' 'python-pygments')
+makedepends=('python-distribute')
+source=("git://github.com/bitkeen/pgcli.git")
+provides=('pgcli')
+conflicts=('pgcli-git')
+md5sums=('SKIP')
+
+pkgver() {
+  cd "$srcdir/pgcli"
+  ( set -o pipefail
+    git describe --long --tags 2>/dev/null | sed 's/\([^-]*-g\)/r\1/;s/-/./g' ||
+    printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+  )
+}
+
+
+package() {
+    cd $srcdir/pgcli
+    python setup.py install --root=$pkgdir/ --optimize=1
+    echo "#!/usr/bin/bash" > $pkgdir/usr/bin/pgcli
+    echo "python -c 'import pgcli.main; pgcli.main.cli()' \"\$@\"" >> $pkgdir/usr/bin/pgcli
+}
+
