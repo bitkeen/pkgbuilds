@@ -1,0 +1,36 @@
+# Maintainer: Lukas Fleischer <lfleischer@archlinux.org>
+# Contributor: Bartłomiej Piotrowski <bpiotrowski@archlinux.org>
+# Contributor: Thomas Dziedzic < gostrc at gmail >
+# Contributor: Bert Muennich <muennich at informatik.hu-berlin.de>
+# Contributor: Brad Fanella <bradfanella@archlinux.us>
+
+# Version with custom keybindings.
+
+commit=bc2eafb996ed2f0d0a127a1a92583d30680886f0
+pkgname=sxiv
+pkgver=26
+pkgrel=1
+pkgdesc='Simple X Image Viewer'
+arch=('x86_64')
+license=('GPL2')
+url='https://github.com/bitkeen/sxiv'
+depends=('imlib2' 'desktop-file-utils' 'xdg-utils' 'hicolor-icon-theme' 'libexif' 'libxft')
+# source=("$pkgname-$pkgver.tar.gz"::"https://github.com/bitkeen/sxiv/archive/v$pkgver.tar.gz")
+source=("$commit.tar.gz"::"https://github.com/bitkeen/sxiv/archive/$commit.tar.gz")
+md5sums=('1c9df5b40ed54a97ce674a08b6712055')
+
+prepare() {
+  cd "$pkgname-$commit"
+  ln -s config.def.h config.h
+}
+
+build() {
+  make -C "$pkgname-$commit"
+}
+
+package() {
+  cd "$pkgname-$commit"
+  make PREFIX=/usr DESTDIR="$pkgdir" install
+  make -C icon PREFIX=/usr DESTDIR="$pkgdir" install
+  install -Dm644 sxiv.desktop "$pkgdir"/usr/share/applications/sxiv.desktop
+}
