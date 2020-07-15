@@ -13,14 +13,14 @@ url="https://github.com/bitkeen/dmenu"
 arch=('i686' 'x86_64')
 license=('MIT')
 depends=('sh' 'libxinerama' 'libxft')
-makedepends=('git')
 provides=($pkgname)
 conflicts=($pkgname)
-source=(git://github.com/bitkeen/dmenu.git)
-sha256sums=('SKIP')
+groups=('custom')
+source=(https://github.com/bitkeen/dmenu/archive/master.tar.gz)
+sha256sums=('616b9da1e1cbce7dd87e703a76238d28eaa0144808477102a10840b290c4b28f')
 
 prepare() {
-  cd $pkgname
+  cd "${pkgname}-master"
   # to use a custom config.h, place it in the package directory
   if [[ -f ${SRCDEST}/config.h ]]; then
       cp "${SRCDEST}/config.h" .
@@ -28,14 +28,14 @@ prepare() {
 }
 
 build(){
-  cd $pkgname
+  cd "${pkgname}-master"
   make \
     X11INC=/usr/include/X11 \
     X11LIB=/usr/lib/X11
 }
 
 package() {
-  cd $pkgname
+  cd "${pkgname}-master"
   make PREFIX=/usr DESTDIR="$pkgdir" install
   install -Dm644 LICENSE "$pkgdir"/usr/share/licenses/$pkgname/LICENSE
 }
