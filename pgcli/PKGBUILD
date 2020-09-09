@@ -4,33 +4,22 @@
 # A mix of https://aur.archlinux.org/packages/pgcli-git/
 # and https://aur.archlinux.org/packages/pgcli/.
 
+commit=d9adca7d5e53cf4f447cc804b3137fd9934150bd
 pkgname=pgcli
-pkgver=v2.2.0.r27.g779fe9b4
+pkgver=v3.0.0.${commit}
 pkgrel=1
 pkgdesc="a command line interface for Postgres with auto-completion and syntax highlighting"
 url="http://pgcli.com/"
 arch=(any)
 license=('BSD')
-depends=('python' 'python-sqlparse>=0.3.0' 'python-psycopg2' 'python-click' 'python-prompt_toolkit' 'python-humanize>=0.5.1' 'python-configobj>=5.0.6' 'python-pgspecial>=1.11.5' 'python-setproctitle>=1.1.9' 'python-cli_helpers>=1.2.0' 'python-keyring' 'python-dbus' 'python-pygments')
+depends=('python' 'python-sqlparse>=0.3.0' 'python-psycopg2' 'python-click' 'python-prompt_toolkit>=3.0.6' 'python-humanize>=0.5.1' 'python-configobj>=5.0.6' 'python-pgspecial>=1.11.5' 'python-setproctitle>=1.1.9' 'python-cli_helpers>=1.2.0' 'python-keyring' 'python-dbus' 'python-pygments')
 makedepends=('python-distribute')
-source=("git://github.com/bitkeen/pgcli.git")
+source=("pgcli.tar.gz"::"https://github.com/dbcli/pgcli/archive/$commit.tar.gz")
 provides=('pgcli')
 conflicts=('pgcli-git')
-md5sums=('SKIP')
-
-pkgver() {
-  cd "$srcdir/pgcli"
-  ( set -o pipefail
-    git describe --long --tags 2>/dev/null | sed 's/\([^-]*-g\)/r\1/;s/-/./g' ||
-    printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
-  )
-}
-
+md5sums=('2ad0d9e6721e91053ca11400aa71789d')
 
 package() {
-    cd $srcdir/pgcli
+    cd $srcdir/$pkgname-$commit
     python setup.py install --root=$pkgdir/ --optimize=1
-    echo "#!/usr/bin/bash" > $pkgdir/usr/bin/pgcli
-    echo "python -c 'import pgcli.main; pgcli.main.cli()' \"\$@\"" >> $pkgdir/usr/bin/pgcli
 }
-
