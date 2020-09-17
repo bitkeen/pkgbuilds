@@ -4,7 +4,7 @@
 # A mix of https://aur.archlinux.org/packages/pgcli-git/
 # and https://aur.archlinux.org/packages/pgcli/.
 
-commit=d9adca7d5e53cf4f447cc804b3137fd9934150bd
+commit=master
 pkgname=pgcli
 pkgver=v3.0.0.${commit}
 pkgrel=1
@@ -14,10 +14,10 @@ arch=(any)
 license=('BSD')
 depends=('python' 'python-sqlparse>=0.3.0' 'python-psycopg2' 'python-click' 'python-prompt_toolkit>=3.0.6' 'python-humanize>=0.5.1' 'python-configobj>=5.0.6' 'python-pgspecial>=1.11.5' 'python-setproctitle>=1.1.9' 'python-cli_helpers>=1.2.0' 'python-keyring' 'python-dbus' 'python-pygments')
 makedepends=('python-distribute')
-source=("pgcli.tar.gz"::"https://github.com/dbcli/pgcli/archive/$commit.tar.gz")
+source=("pgcli.tar.gz"::"https://github.com/bitkeen/pgcli/archive/$commit.tar.gz")
 provides=('pgcli')
 conflicts=('pgcli-git')
-md5sums=('2ad0d9e6721e91053ca11400aa71789d')
+md5sums=('SKIP')
 
 package() {
     cd $srcdir/$pkgname-$commit
