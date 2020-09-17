@@ -4,7 +4,7 @@
 # A mix of https://aur.archlinux.org/packages/pgcli-git/
 # and https://aur.archlinux.org/packages/pgcli/.
 
-commit=master
+commit=vi-readline-maps
 pkgname=pgcli
 pkgver=v3.0.0.${commit}
 pkgrel=1
