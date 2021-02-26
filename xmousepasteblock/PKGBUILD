@@ -1,0 +1,32 @@
+# vim:ts=4:sw=4:expandtab
+# Maintainer: milaq <micha.laqua@gmail.com>
+
+# Taken from AUR xmousepasteblock-git, but the
+# version is fixed as a commit.
+
+commit=ac8a28c5411ce23738cd479fab1b456841637f0f
+pkgname=xmousepasteblock
+pkgver=1.0.0.${commit}
+pkgrel=1
+pkgdesc='Middle mouse button primary X selection/clipboard paste disabler'
+arch=('i686' 'x86_64')
+url='https://github.com/milaq/XMousePasteBlock'
+license=('GPL')
+provides=('xmousepasteblock')
+depends=('libxi' 'libx11' 'libev')
+makedepends=('git')
+groups=('custom')
+source=("XMousePasteBlock-${commit}.tar.gz"::"https://github.com/milaq/XMousePasteBlock/archive/$commit.tar.gz")
+md5sums=('9f8c0b64c6bc96f062983e62f7c0f3ca')
+
+_gitname='XMousePasteBlock'
+
+build() {
+    cd "$_gitname-$commit"
+    make all
+}
+
+package() {
+    cd "$_gitname-$commit"
+    make DESTDIR="$pkgdir/" install
+}
