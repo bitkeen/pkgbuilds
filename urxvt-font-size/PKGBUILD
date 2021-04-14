@@ -1,0 +1,34 @@
+# Maintainer: Viktor Stanchev <me aatt viktorstanchev doot com>
+
+# Taken from AUR urxvt-font-size-git, but the
+# version is fixed as a commit.
+
+commit=0984499379e420de651dcfeedfbb7938867c44f8
+pkgname=urxvt-font-size
+pkgver=16
+pkgrel=1
+pkgdesc='On-the-fly URxvt font size adjustments'
+arch=('any')
+url="https://github.com/majutsushi/${pkgname}"
+license=('MIT')
+depends=('rxvt-unicode' 'xorg-xrdb' 'xorg-xlsfonts')
+makedepends=('git')
+provides=('urxvt-font-size')
+conflicts=('urxvt-font-size')
+install='urxvt-font-size.install'
+provides=("${pkgname}")
+conflicts=("${pkgname}")
+groups=('custom')
+source=("${pkgname}-${commit}.tar.gz"::"https://github.com/majutsushi/${pkgname}/archive/${commit}.tar.gz")
+md5sums=('5c196ee5ecaa89b4316099aeaa0b1350')
+
+pkgver() {
+    cd "$srcdir/$pkgname-$commit"
+    git rev-list --count HEAD
+}
+
+package() {
+    cd "$srcdir/$pkgname-$commit"
+    install -D -m755 font-size "$pkgdir/usr/lib/urxvt/perl/font-size"
+    install -D -m644 README.markdown "$pkgdir/usr/share/doc/$pkgname/README.markdown"
+}
