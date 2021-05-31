@@ -4,7 +4,7 @@
 
 _pkgname=rxvt-unicode
 pkgname=rxvt-unicode-256xresources
-pkgver=9.22
+pkgver=9.26
 pkgrel=3
 pkgdesc="urxvt with a patch to support 256 Xresource colors"
 arch=('x86_64')
@@ -20,7 +20,7 @@ source=(http://dist.schmorp.de/rxvt-unicode/$_pkgname-$pkgver.tar.bz2
         urxvt-tabbed.desktop)
 provides=(rxvt-unicode)
 conflicts=(rxvt-unicode)
-sha256sums=('e94628e9bcfa0adb1115d83649f898d6edb4baced44f5d5b769c2eeb8b95addd'
+sha256sums=('643116b9a25d29ad29f4890131796d42e6d2d21312282a613ef66c80c5b8c98b'
             'e51a598ee616b5953c991a4135dd1acc13a62f1180a8b842297f5401df55dc69'
             '5f9c435d559371216d1c5b49c6ec44bfdb786b12d925d543c286b0764dea0319'
             '91536bb27c6504d6cb0d33775a0c4709a4b439670b900f0c278c25037f19ad66'
