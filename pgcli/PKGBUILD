@@ -4,7 +4,7 @@
 # A mix of https://aur.archlinux.org/packages/pgcli-git/
 # and https://aur.archlinux.org/packages/pgcli/.
 
-commit=00eb7d1c06a81c9396c3978a9f680490b5f34dfd
+commit=61b42e7b869358fc181c503fd8437c34647b80d5
 pkgname=pgcli
 pkgver=v3.0.0.${commit}
 pkgrel=1
