@@ -17,7 +17,7 @@ url='https://github.com/bitkeen/sxiv'
 depends=('imlib2' 'desktop-file-utils' 'xdg-utils' 'hicolor-icon-theme' 'libexif' 'libxft')
 groups=('custom')
 source=("$branch.tar.gz"::"https://github.com/bitkeen/sxiv/archive/$branch.tar.gz")
-md5sums=('b18d10f7f7263b036a5f1f69ccbd81c7')
+md5sums=('4943ad7d8db7c09b584950fd2e3666e3')
 
 prepare() {
   cd "$pkgname-$branch"
