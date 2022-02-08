@@ -1,7 +1,11 @@
 pkg
 src
+*.deb
 *.tar
 *.tar.gz
 *.tar.xz
 *.tar.zst
+*.tgz
 *.bz2
+*.zip
+*.AppImage
