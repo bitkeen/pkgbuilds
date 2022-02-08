@@ -13,6 +13,7 @@ Forks:
 
 Copies:
 ```
+- atool  # A script for managing file archives of various types
 - beekeeper-studio-appimage
 - colorpicker  # Click on a pixel on your screen and print its color value in RGB. Written for X11.
 - dragon-drag-and-drop  # Simple drag-and-drop source/sink for X
