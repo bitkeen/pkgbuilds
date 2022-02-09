@@ -26,6 +26,7 @@ Copies:
 - mycli
 - paper-icon-theme
 - path-extractor  # A unix filter which outputs the filepaths found in stdin
+- pgformatter-git  # Correctly indent PostgreSQL queries
 - polybar  # A fast and easy-to-use status bar
 - python-cli_helpers
 - python-pgspecial
