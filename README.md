@@ -16,6 +16,7 @@ Copies:
 - atool  # A script for managing file archives of various types
 - beekeeper-studio-appimage
 - colorpicker  # Click on a pixel on your screen and print its color value in RGB. Written for X11.
+- jiq-bin  # Json Incremental Digger that uses jq internally
 - dragon-drag-and-drop  # Simple drag-and-drop source/sink for X
 - git-delta-bin  # A syntax-highlighting pager for git and diff output
 - git-open  # Open a repo website (GitHub, GitLab, Bitbucket) in your browser
