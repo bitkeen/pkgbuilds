@@ -35,7 +35,6 @@ Copies:
 - scrcpy  # Display and control an Android device
 - slack-desktop
 - smenu  # A powerful and versatile selection tool for interactive or scripting use
-- terraform11
 - tflint  # A linter for Terraform code
 - ttf-font-awesome-4
 - urxvt-font-size
