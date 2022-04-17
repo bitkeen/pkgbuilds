@@ -23,6 +23,7 @@ Copies:
 - hadolint
 - htop-vim
 - lab
+- librespeed-cli-bin
 - litecli
 - mycli
 - paper-icon-theme
