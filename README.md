@@ -20,7 +20,7 @@ Copies:
 - dragon-drag-and-drop  # Simple drag-and-drop source/sink for X
 - git-delta-bin  # A syntax-highlighting pager for git and diff output
 - git-open  # Open a repo website (GitHub, GitLab, Bitbucket) in your browser
-- hadolint
+- hadolint-bin
 - htop-vim
 - lab
 - librespeed-cli-bin
