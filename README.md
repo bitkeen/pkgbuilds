@@ -32,6 +32,8 @@ Copies:
 - polybar  # A fast and easy-to-use status bar
 - python-cli_helpers
 - python-pgspecial
+- ruby-pg-query  # Dependency for sqlint.
+- ruby-sqlint  # Simple SQL linter supporting ANSI and PostgreSQL syntaxes.
 - rxvt-unicode-256xresources
 - scrcpy  # Display and control an Android device
 - slack-desktop
