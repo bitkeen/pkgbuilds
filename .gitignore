@@ -1,6 +1,7 @@
 pkg
 src
 *.deb
+*.gem
 *.tar
 *.tar.gz
 *.tar.xz
