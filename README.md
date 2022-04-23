@@ -22,6 +22,7 @@ Copies:
 - git-open  # Open a repo website (GitHub, GitLab, Bitbucket) in your browser
 - hadolint-bin
 - htop-vim
+- instant-markdown-d
 - lab
 - librespeed-cli-bin
 - litecli
