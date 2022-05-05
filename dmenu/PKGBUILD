@@ -17,7 +17,7 @@ provides=($pkgname)
 conflicts=($pkgname)
 groups=('custom')
 source=(https://github.com/bitkeen/dmenu/archive/master.tar.gz)
-sha256sums=('616b9da1e1cbce7dd87e703a76238d28eaa0144808477102a10840b290c4b28f')
+sha256sums=('96401341372d649fbb1159a2c97bd6055a5cb8634a87f8d7d3530c44424e772d')
 
 prepare() {
   cd "${pkgname}-master"
