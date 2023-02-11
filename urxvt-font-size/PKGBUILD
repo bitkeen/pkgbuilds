@@ -5,7 +5,7 @@
 
 commit=0984499379e420de651dcfeedfbb7938867c44f8
 pkgname=urxvt-font-size
-pkgver=16
+pkgver=45
 pkgrel=1
 pkgdesc='On-the-fly URxvt font size adjustments'
 arch=('any')
