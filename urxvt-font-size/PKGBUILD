@@ -5,7 +5,7 @@
 
 commit=0984499379e420de651dcfeedfbb7938867c44f8
 pkgname=urxvt-font-size
-pkgver=45
+pkgver="1.3.${commit:0:6}"
 pkgrel=1
 pkgdesc='On-the-fly URxvt font size adjustments'
 arch=('any')
@@ -21,11 +21,6 @@ conflicts=("${pkgname}")
 groups=('custom')
 source=("${pkgname}-${commit}.tar.gz"::"https://github.com/majutsushi/${pkgname}/archive/${commit}.tar.gz")
 md5sums=('5c196ee5ecaa89b4316099aeaa0b1350')
-
-pkgver() {
-    cd "$srcdir/$pkgname-$commit"
-    git rev-list --count HEAD
-}
 
 package() {
     cd "$srcdir/$pkgname-$commit"
