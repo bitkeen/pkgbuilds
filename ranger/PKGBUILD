@@ -29,6 +29,7 @@ optdepends=('atool: for previews of archives'
             'w3m: for previews of images and html pages')
 provides=('ranger')
 conflicts=('ranger')
+groups=('custom')
 source=("${pkgname}.tar.gz::https://github.com/ranger/ranger/archive/${commit}.tar.gz")
 md5sums=('4aaa149b6a32ee6a1c09459b76ff34f7')
 
