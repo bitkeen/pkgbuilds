@@ -3,9 +3,9 @@
 # Contributor: aksr <aksr at t-com dot me>
 # Mantainer: XavRan <leandro.espinozar@protonmail.com>
 
-commit=f8b304f74be20c56f8596e6ea312c7c041d0def4
+commit=504d5ef2c1feb7d7514c0bd3d59699c8e87c88b5
 pkgname=ranger
-pkgver=1.9.3_f8b304
+pkgver=1.9.3_504d5e
 pkgrel=1
 pkgdesc="A simple, vim-like file manager."
 arch=('any')
@@ -31,7 +31,7 @@ provides=('ranger')
 conflicts=('ranger')
 groups=('custom')
 source=("${pkgname}.tar.gz::https://github.com/ranger/ranger/archive/${commit}.tar.gz")
-md5sums=('4aaa149b6a32ee6a1c09459b76ff34f7')
+md5sums=('ee5cf7e91d90cf85e77468c1db506cc0')
 
 package() {
   cd "$srcdir/$pkgname-$commit"
