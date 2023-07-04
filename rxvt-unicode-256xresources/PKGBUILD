@@ -11,7 +11,7 @@ arch=('x86_64')
 url="http://software.schmorp.de/pkg/rxvt-unicode.html"
 license=('GPL')
 makedepends=('libxft' 'perl' 'startup-notification' 'libnsl')
-depends=('rxvt-unicode-terminfo' 'libxft' 'perl' 'startup-notification' 'libnsl')
+depends=('rxvt-unicode-terminfo' 'libxft' 'perl' 'startup-notification' 'libnsl' 'libptytty')
 optdepends=('gtk2-perl: to use the urxvt-tabbed')
 source=(http://dist.schmorp.de/rxvt-unicode/Attic/$_pkgname-$pkgver.tar.bz2
         256color.patch
