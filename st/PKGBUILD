@@ -13,9 +13,17 @@ license=('MIT')
 depends=(libxft)
 url=https://st.suckless.org
 source=(https://github.com/bitkeen/$pkgname/archive/$branchname.zip
+        blinkingcursor.patch
+        boldnotbright.patch
+        boxdraw.patch
+        desktopentry.patch
         terminfo.patch
         README.terminfo.rst)
 sha256sums=('SKIP'
+            'fa1ce8818b0bec1fa7b9b2681193002ed06845b7349b6455a618dbdf0f9012f1'
+            'd2239eeae0f33a07284c0d362d2bfea12a702eca0b4d65704a316b566fafdb18'
+            'f8733792ef8fd22e6a0e8aab520e3a47134c5a1a51afa43d023f5137a1426aa9'
+            'a7c85e271201b0a1be344955fd962d70e46009f60823971855681678a0101d57'
             'f9deea445a5c6203a0e8e699f3c3b55e27275f17fb408562c4dd5d649edeea23'
             '0ebcbba881832adf9c98ce9fe7667c851d3cc3345077cb8ebe32702698665be2')
 _sourcedir=$pkgname-$branchname
@@ -23,6 +31,10 @@ _makeopts="--directory=$_sourcedir"
 
 prepare() {
   patch --directory="$_sourcedir" --strip=0 < terminfo.patch
+  patch --directory="$_sourcedir" --strip=1 < blinkingcursor.patch
+  patch --directory="$_sourcedir" --strip=1 < boldnotbright.patch
+  patch --directory="$_sourcedir" --strip=1 < boxdraw.patch
+  patch --directory="$_sourcedir" --strip=1 < desktopentry.patch
 
   # This package provides a mechanism to provide a custom config.h. Multiple
   # configuration states are determined by the presence of two files in
