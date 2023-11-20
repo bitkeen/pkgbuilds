@@ -1,0 +1,28 @@
+# Maintainer: Aakash Sharma <aakashsensharma@gmail.com>
+# Contributor: Sergey A. <murlakatamenka@disroot.org>
+# Contributor: rv178 <idliyout@gmail.com>
+
+commit="30f25b5bf99df5f16d91b51a7bd397c1de075085"
+pkgname="swhkd"
+pkgver="1.2.1.${commit}"
+pkgrel=1
+arch=("x86_64")
+url="https://github.com/waycrate/swhkd"
+pkgdesc="A display server independent hotkey daemon inspired by sxhkd."
+license=("BSD")
+depends=("polkit")
+makedepends=("rustup" "make" "git" "scdoc")
+conflicts=("swhkd-musl-git")
+source=("${pkgname}.tar.gz::${url}/archive/$commit.tar.gz")
+sha256sums=("b9d3cccd34084206d0a02c008e9dffc163f62e9ed699d290456b354e88525c1e")
+
+build(){
+    cd $srcdir/$pkgname-$commit
+	make setup
+	make
+}
+
+package() {
+    cd $srcdir/$pkgname-$commit
+	make DESTDIR="$pkgdir/" install
+}
