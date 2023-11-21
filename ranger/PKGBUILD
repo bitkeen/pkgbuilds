@@ -3,7 +3,7 @@
 # Contributor: aksr <aksr at t-com dot me>
 # Mantainer: XavRan <leandro.espinozar@protonmail.com>
 
-commit=1a007158cef1279df68d0e8567b126def6b68046
+commit=136416c7e2ecc27315fe2354ecadfe09202df7dd
 pkgname=ranger
 pkgver=1.9.3_1a0071
 pkgrel=1
@@ -31,7 +31,7 @@ provides=('ranger')
 conflicts=('ranger')
 groups=('custom')
 source=("${pkgname}.tar.gz::https://github.com/ranger/ranger/archive/${commit}.tar.gz")
-md5sums=('5697cfc06e75dd890d421aa02dd57f1f')
+md5sums=('7da4e647471969f8a2719d9d1a79572e')
 
 package() {
   cd "$srcdir/$pkgname-$commit"
