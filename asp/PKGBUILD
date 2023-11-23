@@ -1,0 +1,22 @@
+pkgname=asp
+pkgver=8
+pkgrel=1
+pkgdesc="Arch Linux build source file management tool"
+arch=(any)
+url="https://github.com/archlinux/asp"
+license=(MIT)
+depends=(awk bash jq git libarchive)
+makedepends=(asciidoc git)
+source=("${pkgname}-${pkgver}.tar.gz::${url}/archive/v${pkgver}.tar.gz")
+sha256sums=('4bf911df5d4b1ba610db306cf7ac18b78df6cd879e6474e6b0978accbd435ac5')
+
+build() {
+  make -C "${pkgname}-${pkgver}"
+}
+
+package() {
+  make -C "${pkgname}-${pkgver}" PREFIX=/usr DESTDIR="${pkgdir}" install
+  install -Dm644 "${pkgname}-${pkgver}"/LICENSE "${pkgdir}/usr/share/licenses/asp/LICENSE"
+}
+
+# vim: ft=sh syn=sh et
