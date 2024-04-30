@@ -1,9 +1,9 @@
 # Maintainer: JustKidding <jk@vin.ovh>
 # shellcheck disable=SC2034,SC2154,SC2164
 
-commit="094a7f39afd6b102603d4423504b01a8d1af72b7"
+commit="986be28b549ad4cc3bfd1bd6b00764141470d3ce"
 pkgname=ueberzugpp
-pkgver="2.9.2.${commit}"
+pkgver="2.9.4.${commit}"
 pkgrel=1
 pkgdesc="Command line util which allows to display images in combination with X11 written in C++"
 arch=(any)
@@ -13,7 +13,7 @@ makedepends=("cmake" "cli11" "nlohmann-json" "microsoft-gsl" "wayland-protocols"
 depends=("opencv" "libvips" "glib2" "libxcb" "xcb-util-image" "libsixel" "openssl" "spdlog" "libglvnd"
          "fmt" "turbo-base64" "chafa" "wayland" "onetbb" "glibc" "gcc-libs" "xcb-util-errors")
 source=("${pkgname}.tar.gz::${url}/archive/${commit}.tar.gz")
-sha256sums=('b9d3cccd34084206d0a02c008e9dffc163f62e9ed699d290456b354e88525c1e')
+sha256sums=('e129ab9501eb5c4f321fbfa8a402e8b76473ee6ce1d084a04d5b5080247e3f40')
 provides=("ueberzug")
 conflicts=("ueberzug")
 options=("debug")
